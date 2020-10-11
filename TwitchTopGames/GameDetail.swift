@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import struct Kingfisher.KFImage
 
 struct GameDetail: View {
     @State var game: Game
@@ -14,14 +15,19 @@ struct GameDetail: View {
         
         VStack(alignment: .leading,spacing: 40) {
             
-            Image(game.bannerImage)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .overlay(Rectangle().stroke(Color.white, lineWidth: 4))
-                .shadow(radius: 20)
+            if let url = URL(string: game.bannerImage) {
+                KFImage(url)
+                    .placeholder  {
+                        Image("image2")
+                    }
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .overlay(Rectangle().stroke(Color.white, lineWidth: 4))
+                    .shadow(radius: 20)
+            }
             
             VStack(alignment: .leading, spacing: 5) {
-                Text("Name: \(game.name)")
+                Text("\(game.name)")
                     .font(.title)
                 
                 Text("Channel: \(game.channels)")

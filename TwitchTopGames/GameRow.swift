@@ -22,7 +22,6 @@ struct GameRow: View {
                 KFImage(url)
                     .placeholder  {
                         Image("image1")
-                            .cornerRadius(10)
                     }
                     .cornerRadius(10)
             }
