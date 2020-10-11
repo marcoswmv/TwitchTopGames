@@ -1,2 +1,2 @@
 # TwitchTopGames
-An app client in SwiftUI to display Twitch Top Games.
+A client app in SwiftUI to display Twitch Top Games.
