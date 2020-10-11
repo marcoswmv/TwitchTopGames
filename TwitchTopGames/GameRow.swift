@@ -21,7 +21,7 @@ struct GameRow: View {
             if let url = URL(string: game.thumbnailImage) {
                 KFImage(url)
                     .placeholder  {
-                        Image(game.thumbnailImage)
+                        Image("image1")
                             .cornerRadius(10)
                     }
                     .cornerRadius(10)
